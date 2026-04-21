@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Semua Naga(publik)
+url: http://127.0.0.1:8000/dragons/
+method: GET
+order: 4475507934481794

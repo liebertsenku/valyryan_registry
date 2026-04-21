@@ -1,0 +1,18 @@
+$kind: http-request
+name: Tambah Rider
+url: http://127.0.0.1:8000/riders/
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Aegon Targaryen\",\r
+
+    \  \"house\": \"Targaryen\",\r
+
+    \  \"title\": \"The Conqueror\",\r
+
+    \  \"is_active\": true\r
+
+    }"
+order: 4500265360031952

@@ -1,0 +1,24 @@
+$kind: http-request
+name: Tambah Naga
+url: http://127.0.0.1:8000/dragons/
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Meraxes\",\r
+
+    \  \"color\": \"Silver\",\r
+
+    \  \"size_category\": \"Colossal\",\r
+
+    \  \"status\": \"Alive\",\r
+
+    \  \"rider_id\": 2\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NTA1OTI0fQ.oJ5FCXFnyz4UdeTtowDPiKyJMiWWQe__QFbn5Jvix2M
+order: 4452205786922385

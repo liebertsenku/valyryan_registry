@@ -1,0 +1,14 @@
+$kind: http-request
+name: regist Maeter(gagal)
+url: http://127.0.0.1:8000/auth/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"username\": \"maester_ahmad\",\r
+
+    \  \"password\": \"passwordrahasia123\"\r
+
+    }"
+order: 3009333646568745

@@ -1,0 +1,9 @@
+$kind: http-request
+name: Hapus Naga(Protected)
+url: http://127.0.0.1:8000/dragons/2
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NzQxNTgyfQ.us8m8-R9mHHbeg-4OWuYSE_N0ycjxYtGKGvRWBDuS7s
+order: 4494656293056174

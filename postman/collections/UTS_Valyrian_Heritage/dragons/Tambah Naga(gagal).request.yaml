@@ -1,0 +1,20 @@
+$kind: http-request
+name: Tambah Naga(gagal)
+url: http://127.0.0.1:8000/dragons/
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Meraxes\",\r
+
+    \  \"color\": \"Silver\",\r
+
+    \  \"size_category\": \"Colossal\",\r
+
+    \  \"status\": \"Alive\",\r
+
+    \  \"rider_id\": 2\r
+
+    }"
+order: 4472050813737866

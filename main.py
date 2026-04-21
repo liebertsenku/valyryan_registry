@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from database import engine, Base
-from routes import rider_routes, dragon_routes # Import keduanya
+from routes import rider_routes, dragon_routes, auth_routes
 
-# Membuat tabel secara otomatis
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -11,9 +10,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Daftarkan Router
+# Mendaftarkan Router
+app.include_router(auth_routes.router)
 app.include_router(rider_routes.router)
-app.include_router(dragon_routes.router) # Tambahkan baris ini
+app.include_router(dragon_routes.router)
 
 @app.get("/")
 def root():

@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "UTS_Valyrian_Heritage Copy",
+    "_postman_id": "a3f7c2d1-84e6-4b19-9f05-2c3d1e8a7b56",
+    "description": "Collection UTS Valyrian Heritage - salinan untuk pengujian endpoint autentikasi, rider, dan dragon registry.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Maester",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"maester_ahmad\",\n  \"password\": \"passwordrahasia123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/register",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1:8000"],
+          "path": ["auth", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tambah Rider",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Aegon Targaryen\",\n  \"house\": \"Targaryen\",\n  \"title\": \"The Conqueror\",\n  \"is_active\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/riders/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1:8000"],
+          "path": ["riders", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Maester",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "maester_ahmad",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "passwordrahasia123",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/login",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1:8000"],
+          "path": ["auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tambah Naga (gagal)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Meraxes\",\n  \"color\": \"Silver\",\n  \"size_category\": \"Colossal\",\n  \"status\": \"Alive\",\n  \"rider_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/dragons/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1:8000"],
+          "path": ["dragons", ""]
+        }
+      },
+      "response": []
+    }
+  ]
+}

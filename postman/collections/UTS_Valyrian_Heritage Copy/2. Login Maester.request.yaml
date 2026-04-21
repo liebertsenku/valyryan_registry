@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://127.0.0.1:8000/auth/login
+method: POST
+body:
+  type: urlencoded
+  content:
+    username: maester_ahmad
+    password: passwordrahasia123
+order: 3091709511557219

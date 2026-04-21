@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Semua Rider
+url: http://127.0.0.1:8000/riders/
+method: GET
+order: 4501180012849038

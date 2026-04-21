@@ -1,0 +1,24 @@
+$kind: http-request
+name: Update Naga (Protected)
+url: http://127.0.0.1:8000/dragons/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Balerion the Black Dread\",\r
+
+    \  \"color\": \"Pitch Black\",\r
+
+    \  \"size_category\": \"Colossal\",\r
+
+    \  \"status\": \"Deceased\",\r
+
+    \  \"rider_id\": 1\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NzQxNTgyfQ.us8m8-R9mHHbeg-4OWuYSE_N0ycjxYtGKGvRWBDuS7s
+order: 4476938876628885
