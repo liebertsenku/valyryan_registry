@@ -1,127 +1,359 @@
 {
   "info": {
-    "name": "UTS_Valyrian_Heritage Copy",
-    "_postman_id": "a3f7c2d1-84e6-4b19-9f05-2c3d1e8a7b56",
-    "description": "Collection UTS Valyrian Heritage - salinan untuk pengujian endpoint autentikasi, rider, dan dragon registry.",
+    "name": "UTS_Valyrian_Heritage",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Register Maester",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"username\": \"maester_ahmad\",\n  \"password\": \"passwordrahasia123\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
+      "name": "-",
+      "item": [
+        {
+          "name": "Read Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": [""]
             }
           }
-        },
-        "url": {
-          "raw": "http://127.0.0.1:8000/auth/register",
-          "protocol": "http",
-          "host": ["127", "0", "0", "1:8000"],
-          "path": ["auth", "register"]
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "Tambah Rider",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Aegon Targaryen\",\n  \"house\": \"Targaryen\",\n  \"title\": \"The Conqueror\",\n  \"is_active\": true\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://127.0.0.1:8000/riders/",
-          "protocol": "http",
-          "host": ["127", "0", "0", "1:8000"],
-          "path": ["riders", ""]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Login Maester",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "item": [
             {
-              "key": "username",
-              "value": "maester_ahmad",
-              "type": "text"
+              "name": "Register Maester",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"maester_ahmad\",\r\n  \"password\": \"passwordrahasia123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/auth/register",
+                  "protocol": "http",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "8000",
+                  "path": ["auth", "register"]
+                }
+              }
             },
             {
-              "key": "password",
-              "value": "passwordrahasia123",
-              "type": "text"
+              "name": "regist Maeter(gagal)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"maester_ahmad\",\r\n  \"password\": \"passwordrahasia123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/auth/register",
+                  "protocol": "http",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "8000",
+                  "path": ["auth", "register"]
+                }
+              }
             }
           ]
         },
-        "url": {
-          "raw": "http://127.0.0.1:8000/auth/login",
-          "protocol": "http",
-          "host": ["127", "0", "0", "1:8000"],
-          "path": ["auth", "login"]
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "Login Maester",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "maester_ahmad",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "passwordrahasia123",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/auth/login",
+                  "protocol": "http",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "8000",
+                  "path": ["auth", "login"]
+                }
+              }
+            }
+          ]
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "Tambah Naga (gagal)",
-      "request": {
-        "auth": {
-          "type": "noauth"
-        },
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Meraxes\",\n  \"color\": \"Silver\",\n  \"size_category\": \"Colossal\",\n  \"status\": \"Alive\",\n  \"rider_id\": 2\n}",
-          "options": {
-            "raw": {
-              "language": "json"
+      "name": "dragons",
+      "item": [
+        {
+          "name": "Get Semua Naga(publik)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/dragons/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["dragons", ""]
             }
           }
         },
-        "url": {
-          "raw": "http://127.0.0.1:8000/dragons/",
-          "protocol": "http",
-          "host": ["127", "0", "0", "1:8000"],
-          "path": ["dragons", ""]
+        {
+          "name": "Tambah Naga",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NTA1OTI0fQ.oJ5FCXFnyz4UdeTtowDPiKyJMiWWQe__QFbn5Jvix2M",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Meraxes\",\r\n  \"color\": \"Silver\",\r\n  \"size_category\": \"Colossal\",\r\n  \"status\": \"Alive\",\r\n  \"rider_id\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/dragons/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["dragons", ""]
+            }
+          }
+        },
+        {
+          "name": "Tambah Naga(gagal)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Meraxes\",\r\n  \"color\": \"Silver\",\r\n  \"size_category\": \"Colossal\",\r\n  \"status\": \"Alive\",\r\n  \"rider_id\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/dragons/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["dragons", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Naga (Protected)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NzQxNTgyfQ.us8m8-R9mHHbeg-4OWuYSE_N0ycjxYtGvRWBDuS7s",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Balerion the Black Dread\",\r\n  \"color\": \"Pitch Black\",\r\n  \"size_category\": \"Colossal\",\r\n  \"status\": \"Deceased\",\r\n  \"rider_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/dragons/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["dragons", "1"]
+            }
+          }
+        },
+        {
+          "name": "Hapus Naga(Protected)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWVzdGVyX2FobWFkIiwiZXhwIjoxNzc2NzQxNTgyfQ.us8m8-R9mHHbeg-4OWuYSE_N0ycjxYtGvRWBDuS7s",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/dragons/2",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["dragons", "2"]
+            }
+          }
+        },
+        {
+          "name": "Dragon_id",
+          "item": [
+            {
+              "name": "Get Dragon by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/dragons/1",
+                  "protocol": "http",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "8000",
+                  "path": ["dragons", "1"]
+                }
+              }
+            }
+          ]
         }
-      },
-      "response": []
+      ]
+    },
+    {
+      "name": "riders",
+      "item": [
+        {
+          "name": "Get Semua Rider",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/riders/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["riders", ""]
+            }
+          }
+        },
+        {
+          "name": "Tambah Rider",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Aegon Targaryen\",\r\n  \"house\": \"Targaryen\",\r\n  \"title\": \"The Conqueror\",\r\n  \"is_active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/riders/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["riders", ""]
+            }
+          }
+        },
+        {
+          "name": "Rider_id",
+          "item": [
+            {
+              "name": "Get Rider by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/riders/1",
+                  "protocol": "http",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "8000",
+                  "path": ["riders", "1"]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
-    
